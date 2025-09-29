@@ -13,7 +13,10 @@ public class Composant {
     private String nomComposant;
     private Float prix;
 
-
+@ManyToOne
+Menu menu;
+@OneToOne
+DetailComposant detailComposant;
 
     public Composant() {}
     public Composant(String nomComposant, Float prix) {

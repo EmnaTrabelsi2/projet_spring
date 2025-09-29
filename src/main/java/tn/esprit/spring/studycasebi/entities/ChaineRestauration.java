@@ -14,6 +14,8 @@ public class ChaineRestauration {
     private String libelle;
     private LocalDate dateCreation;
 
+    @OneToMany(mappedBy = "chaineRestauration")
+    private List<Restaurant > chaineRestaurations;
 
     public ChaineRestauration() {}
     public ChaineRestauration(String libelle, LocalDate dateCreation) {

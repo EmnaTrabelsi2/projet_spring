@@ -2,6 +2,8 @@ package tn.esprit.spring.studycasebi.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class ChefCuisinier {
 
@@ -15,7 +17,8 @@ public class ChefCuisinier {
     @Enumerated(EnumType.STRING)
     private TypeChef typeChef;
 
-
+@ManyToMany
+List<Menu> menuList;
 
     public ChefCuisinier() {}
     public ChefCuisinier(String nom, String prenom, TypeChef typeChef) {
@@ -45,6 +48,7 @@ public class ChefCuisinier {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
+
     public TypeChef getTypeChef() {
         return typeChef;
 

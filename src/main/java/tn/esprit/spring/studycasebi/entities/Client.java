@@ -1,11 +1,9 @@
 package tn.esprit.spring.studycasebi.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity               // Indique que c'est une entité JPA
 
@@ -15,6 +13,9 @@ public class Client {
     private Long idclient ;
     private String indentifiant ;
 private Date datePremiereVisite;
+@OneToMany(mappedBy = "client")
+    List<Commande>commandes ;
+
 public Client(){}
 public Client(String indentifiant, Date datePremiereVisite) {this.indentifiant=indentifiant;this.datePremiereVisite=datePremiereVisite;
 }

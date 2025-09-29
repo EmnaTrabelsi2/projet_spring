@@ -14,8 +14,6 @@ public class DetailComposant {
     @Enumerated(EnumType.STRING)
     private TypeComposant typeComposant;
 
-    @ManyToOne
-    private Composant composant;
 
     public DetailComposant() {}
     public DetailComposant(Float imc, TypeComposant typeComposant) {
@@ -42,11 +40,6 @@ public class DetailComposant {
     public void setTypeComposant(TypeComposant typeComposant) {
         this.typeComposant = typeComposant;
     }
-    public Composant getComposant() {
-        return composant;
-    }
-    public void setComposant(Composant composant) {
-        this.composant = composant;
-    }
+
 
 }

@@ -1,9 +1,6 @@
 package tn.esprit.spring.studycasebi.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -17,6 +14,11 @@ public class Commande {
    private Float totalRemise;
    private Float totalcommande;
    private Long note;
+   @ManyToOne
+   Menu  menus ;
+   @ManyToOne
+   Client client ;
+
    public Commande() {  }
     public Commande(Long idcommande,LocalDate datecommande,Integer pourcentageRemise,Float totalRemise,Float totalcommande,Long note) {
        this.idcommande = idcommande;

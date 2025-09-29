@@ -11,6 +11,10 @@ public class Restaurant {
     private Long idRestaurant;
     private String nom;
     private Long nbPlacesMax;
+    @ManyToOne
+    ChaineRestauration chaineRestauration;
+    @OneToMany
+    List<Menu>menus;
     public Restaurant() {}
     public Restaurant(String nom, Long nbPlacesMax) {
         this.nom = nom;

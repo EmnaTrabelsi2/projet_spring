@@ -2,6 +2,8 @@ package tn.esprit.spring.studycasebi.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Menu {
 
@@ -10,11 +12,17 @@ public class Menu {
     private Long idMenu;
 
     private String libelleMenu;
-
+@Enumerated(EnumType.STRING)
     private TypeMenu typeMenu;
 
     private float prixTotal;
+    @OneToMany(mappedBy = "menus")
+    List<Commande> commandeList;
 
+@ManyToMany(mappedBy = "menuList")
+List<ChefCuisinier>chefCuisinierList;
+@OneToMany(mappedBy = "menu")
+List<Composant> composantList;
     // --- Constructeurs ---
     public Menu() {}
 
